@@ -1,0 +1,4 @@
+patrol:
+  ros__parameters:
+    speed: 0.2
+    turn_speed: 0.65

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>lab_cpp</name><version>1.0.0</version>
+  <description>Monitor C++17 de telemetría.</description>
+  <maintainer email="course@example.invalid">ROS 2 Course</maintainer><license>MIT</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend><depend>lab_interfaces</depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

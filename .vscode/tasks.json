@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label": "Curso: compilar", "type": "shell", "command": "bash scripts/build.sh", "problemMatcher": ["$gcc"], "group": "build"},
+    {"label": "Curso: diagnóstico", "type": "shell", "command": "bash scripts/doctor.sh", "problemMatcher": []},
+    {"label": "Curso: simulación ligera", "type": "shell", "command": "bash -c 'source scripts/env.sh && ros2 launch lab_py course.launch.py'", "problemMatcher": []},
+    {"label": "Curso: tests sin ROS", "type": "shell", "command": "python3 -m unittest discover -s tests -v", "problemMatcher": []}
+  ]
+}

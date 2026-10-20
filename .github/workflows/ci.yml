@@ -1,0 +1,36 @@
+name: ROS 2 course checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  headless:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    container: ros:jazzy-ros-base
+    defaults:
+      run:
+        shell: bash
+    env:
+      ROS_DOMAIN_ID: 73
+      ROS_AUTOMATIC_DISCOVERY_RANGE: LOCALHOST
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dependencies
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends build-essential cmake python3-colcon-common-extensions
+      - name: Build all three packages
+        run: bash scripts/build.sh
+      - name: Algorithm tests
+        run: python3 -m unittest discover -s tests -v
+      - name: ROS runtime integration
+        run: |
+          source scripts/env.sh
+          python3 scripts/check_runtime.py
+      - name: Runtime logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runtime-log
+          path: /tmp/ros2-course-runtime.log
+          if-no-files-found: ignore

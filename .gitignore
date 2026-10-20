@@ -1,0 +1,9 @@
+ros_ws/build/
+ros_ws/install/
+ros_ws/log/
+__pycache__/
+*.pyc
+.pytest_cache/
+recordings/
+evidencias/
+*.zip
