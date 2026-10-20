@@ -11,11 +11,20 @@ Fecha: 20 de octubre de 2026.
 - Lectura y validación estructural de JSON, YAML y XML/SDF; esto no sustituye los esquemas o validadores específicos de ROS, RViz o SDFormat.
 - Comprobación de enlaces locales Markdown y presencia de 12 prácticas.
 
-## Preparado, pero no ejecutado aquí
+## Ejecutado después en GitHub Actions
 
-El entorno de creación no dispone de Docker ni ROS. Por tanto, no se ha ejecutado la construcción de la imagen, la compilación de los paquetes C++/interfaces con colcon, la prueba de integración ROS, el escritorio noVNC, RViz ni Gazebo.
+La primera ejecución de [ROS 2 course checks](https://github.com/arfipod/ros2playground/actions/runs/39394845561), sobre el commit `21cc1d194ab897f1084e36e9edac41080b4a4fab`, terminó correctamente:
 
-No se presenta el entorno como probado de extremo a extremo. La configuración está preparada para arrancarlo y resolver esos puntos en Codespaces. El workflow de GitHub se ejecutará al subir el repositorio; todavía no existe un resultado de CI asociado a esta entrega.
+- Compilación de los tres paquetes con colcon en el contenedor ROS Jazzy.
+- Pruebas de algoritmos.
+- Integración ROS real: recepción de telemetría, presencia del nodo C++, lidar, odometría, rechazo de modo desconocido, movimiento en PATROL y parada enclavada.
+- Conservación del log de ejecución como artefacto del workflow.
+
+## Pendiente de validar en Codespaces
+
+Todavía no se ha arrancado la imagen completa de desarrollo, el escritorio noVNC, RViz ni Gazebo. El workflow usa la imagen base de ROS y ejecuta los nodos sin interfaz gráfica. Por tanto, su resultado no demuestra que el escritorio o el renderizado 3D funcionen correctamente ni mide su rendimiento.
+
+La configuración está preparada para comprobar esos puntos al crear el Codespace. Los cambios posteriores limitados a documentación no requieren repetir la prueba de código ya completada.
 
 ## Primera validación en Codespaces
 

@@ -4,6 +4,8 @@
 
 Repositorio: [arfipod/ros2playground](https://github.com/arfipod/ros2playground). [Comprobaciones automáticas](https://github.com/arfipod/ros2playground/actions).
 
+La primera validación en GitHub Actions ha compilado los tres paquetes y superado la prueba de integración ROS sin interfaz gráfica. El escritorio y Gazebo quedan pendientes de comprobar al arrancar Codespaces; consulta [el estado de validación](docs/VALIDACION.md).
+
 Curso práctico en español para un desarrollador de sistemas embebidos con experiencia en C/C++. Entorno de **Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic**, preparado para GitHub Codespaces. Jazzy se elige como base estable del curso, sin afirmar que sea la distribución más reciente.
 
 **12 prácticas, unas 12–16 horas** con ejercicios. Python para experimentar; C++17 para conectar con tu trabajo habitual. Todo el código de referencia está incluido: no hay que descargar modelos ni depender de una plataforma de cursos.
